@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   :root {
     --teal: #1DAC94;
     --slate: #222F32;
@@ -21,44 +21,62 @@
     --card-text: #626262;
     --max-width: 1256px;
   }
-
-  body { font-family: 'Poppins', Arial, sans-serif; color: var(--slate); background: var(--white); font-size: 16px; line-height: 1.6; }
+ 
+  body {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: var(--slate);
+    background: var(--white);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+ 
+  /* ── UTILITY ── */
   .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
   .section { padding: 100px 92px; width: 100%; }
+  .chakra { font-family: 'Chakra Petch', sans-serif; }
   .label { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; color: var(--body-text); }
+  .tag { display: inline-block; background: var(--teal); color: var(--white); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 8px; }
   .changed { outline: 2px dashed var(--teal); outline-offset: 4px; position: relative; }
   .changed::before { content: '✦ REVISED'; position: absolute; top: -22px; left: 0; background: var(--teal); color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 3px; z-index: 10; white-space: nowrap; }
+  .new::before { content: '+ NEW'; }
+ 
   h1 { font-family: 'Chakra Petch', sans-serif; font-size: 48px; font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--slate); }
   h2 { font-family: 'Chakra Petch', sans-serif; font-size: 40px; font-weight: 600; line-height: 1.4; letter-spacing: -0.02em; color: #2B2B2B; }
   h3 { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 500; line-height: 1.5; letter-spacing: -0.02em; color: var(--charcoal); }
   h4 { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 500; line-height: 1.5; color: #4B4B4B; }
   p { color: var(--body-text); font-size: 16px; line-height: 1.6; }
   a { text-decoration: none; color: inherit; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; font-family: 'Poppins', sans-serif; cursor: pointer; }
+ 
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; font-family: 'Poppins', sans-serif; cursor: pointer; transition: opacity 0.2s; }
+  .btn:hover { opacity: 0.85; }
   .btn-dark { background: var(--charcoal); color: var(--white); }
   .btn-outline { border: 1px solid var(--charcoal); color: var(--slate); }
   .link-arrow { font-size: 16px; font-weight: 600; color: var(--slate); display: inline-flex; align-items: center; gap: 6px; }
   .link-arrow::after { content: '→'; }
-  .new-addition { outline: 2px dashed #f59e0b; outline-offset: 4px; position: relative; }
-  .new-addition::before { content: '+ NEW'; position: absolute; top: -22px; left: 0; background: #f59e0b; color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 3px; z-index: 10; white-space: nowrap; }
-  .legend { background: var(--slate); color: var(--white); padding: 16px 92px; display: flex; gap: 32px; align-items: center; font-size: 13px; font-family: 'Poppins', sans-serif; position: sticky; top: 0; z-index: 100; }
-  .legend-item { display: flex; align-items: center; gap: 8px; }
-  .legend-dot { width: 14px; height: 14px; border-radius: 2px; }
-  .dot-revised { background: var(--teal); }
-  .dot-new { background: #f59e0b; }
-  .legend-title { font-weight: 600; font-size: 14px; margin-right: 16px; }
+ 
+  /* ── TOPBAR ── */
   .topbar { background: var(--white); padding: 10px 92px; border-bottom: 1px solid var(--grey-mid); display: flex; justify-content: flex-end; align-items: center; font-size: 12px; color: var(--body-text); gap: 16px; }
+ 
+  /* ── NAV ── */
   nav { padding: 0 92px; height: 104px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--grey-mid); }
   .nav-logo { font-family: 'Chakra Petch', sans-serif; font-size: 24px; font-weight: 600; color: var(--slate); letter-spacing: -0.02em; }
+  .nav-logo span { color: var(--teal); }
   .nav-links { display: flex; gap: 32px; }
   .nav-links a { font-size: 16px; font-weight: 600; color: var(--slate); }
+ 
+  /* ── HERO ── */
   .hero { position: relative; min-height: 533px; background: linear-gradient(135deg, #d0d8da 0%, #b8c4c7 100%); display: flex; align-items: center; padding: 100px 92px; overflow: hidden; }
   .hero::after { content: ''; position: absolute; right: 80px; top: 50%; transform: translateY(-50%); width: 320px; height: 420px; background: linear-gradient(180deg, #8a9ea3 0%, #6b8188 100%); border-radius: 4px; opacity: 0.4; }
   .hero-card { background: var(--white); border-radius: 60px 0 140px; padding: 56px 40px 76px; max-width: 671px; position: relative; z-index: 2; display: flex; flex-direction: column; gap: 16px; }
+  .hero-card .label { margin-bottom: 4px; }
+  .hero-subhead { font-size: 16px; font-weight: 400; color: var(--body-text); line-height: 1.6; margin-top: 4px; }
   .hero-btns { display: flex; gap: 16px; margin-top: 8px; flex-wrap: wrap; }
+ 
+  /* ── PRIORITIES ── */
   .priorities { padding: 100px 92px; }
   .priorities-inner { max-width: var(--max-width); margin: 0 auto; }
   .priorities-top { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 60px; }
+  .priorities-top h2 { align-self: start; }
   .priorities-top p { font-size: 20px; line-height: 1.5; color: var(--body-text); font-family: 'Chakra Petch', sans-serif; font-weight: 400; }
   .priorities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
   .priority-card { background: var(--grey-light); border-left: 3px solid var(--grey-mid); border-radius: 16px; padding: 40px; display: flex; align-items: center; gap: 24px; }
@@ -66,64 +84,116 @@
   .priority-icon svg { width: 32px; height: 32px; color: var(--teal); }
   .priority-card h4 { font-size: 18px; }
   .priorities-ctas { display: flex; gap: 24px; align-items: center; padding: 0 20px; }
+ 
+  /* ── STATS ── */
   .stats { background: var(--grey-dark); padding: 100px 102px; display: flex; justify-content: center; }
   .stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: var(--max-width); width: 100%; }
   .stat { text-align: center; padding: 0 24px; border-right: 1px solid rgba(255,255,255,0.15); }
   .stat:last-child { border-right: none; }
   .stat-number { font-family: 'Chakra Petch', sans-serif; font-size: 40px; font-weight: 600; color: var(--white); letter-spacing: -0.02em; display: block; margin-bottom: 16px; }
   .stat-label { font-size: 16px; color: var(--white); line-height: 1.6; }
+ 
+  /* ── HOW WE DELIVER ── */
   .how { padding: 100px 92px; }
   .how-inner { max-width: var(--max-width); margin: 0 auto; }
   .how-header { margin-bottom: 60px; }
-  .how-eyebrow { font-size: 20px; font-weight: 400; color: var(--body-text); margin-top: 12px; font-family: 'Chakra Petch', sans-serif; }
+  .how-eyebrow { font-size: 16px; font-weight: 400; color: var(--body-text); margin-top: 12px; font-style: italic; }
   .how-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
   .how-card { background: var(--white); border: 1px solid var(--grey-mid); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; gap: 16px; }
+  .how-card h3 { font-size: 28px; }
+  .how-card p { color: var(--card-text); font-size: 16px; flex: 1; }
+ 
+  /* ── NETWORK ── */
   .network { padding: 100px 0 0; }
   .network-heading { padding: 0 92px; margin-bottom: 0; }
   .network-map { background: linear-gradient(135deg, #eef1f2 0%, #dde3e5 100%); min-height: 500px; position: relative; display: flex; align-items: flex-start; padding: 40px 80px; }
   .network-card { background: var(--white); border-radius: 60px 0 141px; padding: 40px; max-width: 539px; display: flex; flex-direction: column; gap: 24px; margin-top: 40px; }
+  .network-card p { font-size: 16px; color: var(--body-text); }
+  .network-dots { position: absolute; right: 100px; top: 60px; opacity: 0.3; font-size: 80px; color: var(--teal); letter-spacing: -10px; }
+ 
+  /* ── MOMENTUM ── */
   .momentum { background: var(--charcoal); padding: 100px 92px; }
   .momentum-inner { max-width: var(--max-width); margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 60px; }
+  .momentum h2 { color: #F7F7F7; text-align: center; }
   .momentum-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; width: 100%; }
   .momentum-card { background: rgba(255,255,255,0.05); border: 1px solid var(--grey-mid); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; }
   .momentum-card-icon { width: 58px; height: 58px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
   .momentum-card-icon svg { width: 28px; height: 28px; color: var(--teal); }
+  .momentum-card p { color: #F7F7F7; font-size: 16px; line-height: 1.6; }
+ 
+  /* ── TRANSGRID ── */
   .transgrid { padding: 100px 92px; }
   .transgrid-inner { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 64px; align-items: center; }
   .transgrid-logo { background: var(--grey-mid); border-radius: 8px; padding: 32px 48px; font-family: 'Chakra Petch', sans-serif; font-size: 20px; font-weight: 600; color: var(--slate); white-space: nowrap; }
+  .transgrid-logo span { color: var(--teal); }
   .transgrid-content { display: flex; flex-direction: column; gap: 24px; }
   .transgrid-links { display: flex; gap: 24px; flex-wrap: wrap; }
   .transgrid-link { font-size: 16px; font-weight: 600; color: var(--charcoal); display: inline-flex; align-items: center; gap: 6px; }
   .transgrid-link::after { content: '→'; }
+ 
+  /* ── CTA BANNER ── */
   .cta-banner { background: var(--grey-mid); padding: 120px 92px; }
   .cta-inner { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; }
+  .cta-text h2 { color: var(--body-text); font-size: 40px; }
   .cta-text p { color: var(--body-text); margin-top: 16px; }
   .cta-buttons { display: flex; flex-direction: column; gap: 16px; }
   .btn-cta { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: var(--charcoal); color: var(--white); border-radius: 4px; font-size: 16px; font-weight: 600; min-width: 338px; font-family: 'Poppins', sans-serif; }
+ 
+  /* ── FOOTER ── */
   footer { background: var(--charcoal); padding: 50px 92px; }
   .footer-inner { max-width: 1250px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
   .footer-logo { font-family: 'Chakra Petch', sans-serif; font-size: 20px; font-weight: 600; color: var(--white); }
+  .footer-logo span { color: var(--teal); }
+  .footer-links { display: flex; gap: 48px; }
   .footer-col { display: flex; flex-direction: column; gap: 10px; }
   .footer-col a { font-size: 16px; font-weight: 500; color: var(--white); }
   .footer-acknowledgement { max-width: 1250px; margin: 0 auto; font-size: 14px; color: #A7ACAD; line-height: 1.3; }
+ 
+  /* ── CHANGED LABEL COLOURS ── */
+  .changed { outline-color: var(--teal); }
+  .new-addition { outline: 2px dashed #f59e0b; outline-offset: 4px; position: relative; }
+  .new-addition::before { content: '+ NEW'; position: absolute; top: -22px; left: 0; background: #f59e0b; color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 3px; z-index: 10; white-space: nowrap; }
+ 
+  /* ── LEGEND ── */
+  .legend { background: var(--slate); color: var(--white); padding: 16px 92px; display: flex; gap: 32px; align-items: center; font-size: 13px; font-family: 'Poppins', sans-serif; position: sticky; top: 0; z-index: 100; }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-dot { width: 14px; height: 14px; border-radius: 2px; }
+  .dot-revised { background: var(--teal); }
+  .dot-new { background: #f59e0b; }
+  .legend-title { font-weight: 600; font-size: 14px; margin-right: 16px; }
+ 
+  @media (max-width: 900px) {
+    .section, .priorities, .how, .transgrid, .cta-banner, .momentum { padding: 60px 24px; }
+    nav, .topbar, .hero, .stats, .network-heading, .network-map, footer, .legend { padding-left: 24px; padding-right: 24px; }
+    h1 { font-size: 32px; }
+    h2 { font-size: 28px; }
+    .priorities-top, .how-cards, .stats-inner, .momentum-cards { grid-template-columns: 1fr; }
+    .priorities-grid { grid-template-columns: 1fr; }
+    .transgrid-inner, .cta-inner { grid-template-columns: 1fr; }
+    .hero-card { max-width: 100%; }
+    .hero::after { display: none; }
+  }
 </style>
 </head>
 <body>
-
+ 
+<!-- LEGEND -->
 <div class="legend">
   <span class="legend-title">Lumea Homepage — Revised Copy</span>
-  <div class="legend-item"><div class="legend-dot dot-revised"></div> Revised</div>
+  <div class="legend-item"><div class="legend-dot dot-revised"></div> Revised content</div>
   <div class="legend-item"><div class="legend-dot dot-new"></div> New addition</div>
   <div class="legend-item" style="opacity:0.6;">No outline = unchanged</div>
 </div>
-
+ 
+<!-- TOPBAR -->
 <div class="topbar">
   Follow us to keep up to date with our latest posts.
   <a href="https://linkedin.com/company/lumeaau" style="color:var(--teal); font-weight:600;">LinkedIn ↗</a>
 </div>
-
+ 
+<!-- NAV -->
 <nav>
-  <div class="nav-logo">Lumea <span style="color:var(--teal);">↗</span> <span style="font-size:12px; font-weight:400; color:var(--grey-dark); font-family:'Poppins',sans-serif;">Transgrid Group</span></div>
+  <div class="nav-logo">Lumea<span>↗</span> <span style="font-size:12px; font-weight:400; color:var(--grey-dark); font-family:'Poppins',sans-serif;">Transgrid Group</span></div>
   <div class="nav-links">
     <a href="#">About us</a>
     <a href="#">What we do</a>
@@ -132,15 +202,19 @@
     <a href="#">Contact us</a>
   </div>
 </nav>
-
+ 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-card">
     <span class="label">Confidence delivered</span>
     <h1>The future rewards those who can act with confidence</h1>
-    <p class="new-addition" style="font-size:16px; color:var(--body-text); margin-top:8px;">
+ 
+    <!-- NEW: keyword subheadline -->
+    <p class="hero-subhead new-addition" style="margin-top:8px;">
       Australia's leading provider of end-to-end energy connections, asset management and telecommunications infrastructure. Part of the Transgrid Group.
     </p>
-    <p style="font-size:16px; color:var(--body-text);">
+ 
+    <p style="font-size:16px; color:var(--body-text); margin-top:4px;">
       Lumea brings together deep infrastructure expertise, integrated energy and telecommunications networks, and a delivery approach built around your priorities — so you can decide clearly and move with certainty.
     </p>
     <div class="hero-btns">
@@ -149,113 +223,180 @@
     </div>
   </div>
 </div>
-
+ 
+<!-- BUILT AROUND YOUR PRIORITIES -->
 <div class="priorities">
   <div class="priorities-inner">
     <div class="priorities-top">
+      <!-- REVISED H2 -->
       <h2 class="changed">Lumea's Energy and Telecommunications Infrastructure Services</h2>
       <p>Every project carries technical, regulatory and commercial pressure. Our role is to absorb that complexity — so you can focus on what's next, not what might go wrong.</p>
     </div>
+ 
     <div class="priorities-grid">
       <div class="priority-card">
-        <div class="priority-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v1m0 16v1M4.22 4.22l.7.7m12.16 12.16.7.7M1 12h1m20 0h1M4.22 19.78l.7-.7M18.36 5.64l.7-.7"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <div class="priority-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v1m0 16v1M4.22 4.22l.7.7m12.16 12.16.7.7M1 12h1m20 0h1M4.22 19.78l.7-.7M18.36 5.64l.7-.7"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
         <h4>Renewable energy developers</h4>
       </div>
       <div class="priority-card">
-        <div class="priority-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+        <div class="priority-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
         <h4>Large-scale batteries and storage</h4>
       </div>
       <div class="priority-card">
-        <div class="priority-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="priority-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
         <h4>Data centres and energy hubs</h4>
       </div>
       <div class="priority-card">
-        <div class="priority-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg></div>
+        <div class="priority-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+        </div>
         <h4>Telecommunications: wholesale, government and enterprise</h4>
       </div>
       <div class="priority-card">
-        <div class="priority-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="priority-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
         <h4>Asset owners and infrastructure investors</h4>
       </div>
       <div class="priority-card">
-        <div class="priority-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="priority-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
         <h4>Government and public sector</h4>
       </div>
     </div>
+ 
     <div class="priorities-ctas">
       <a href="/what-we-do/" class="link-arrow new-addition" style="color:var(--teal);">Explore what we do</a>
     </div>
   </div>
 </div>
-
+ 
+<!-- STATS BAR -->
 <div class="stats">
   <div class="stats-inner">
-    <div class="stat"><span class="stat-number">55+</span><span class="stat-label">Delivered or in construction</span></div>
-    <div class="stat"><span class="stat-number">15 GW</span><span class="stat-label">Connections portfolio</span></div>
-    <div class="stat"><span class="stat-number">6,800km</span><span class="stat-label">Fibre network</span></div>
-    <div class="stat"><span class="stat-number">37,000</span><span class="stat-label">Towers available for colocation</span></div>
+    <div class="stat">
+      <span class="stat-number">55+</span>
+      <span class="stat-label">Delivered or in construction</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">15 GW</span>
+      <span class="stat-label">Connections portfolio</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">6,800km</span>
+      <span class="stat-label">Fibre network</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">37,000</span>
+      <span class="stat-label">Towers available for colocation</span>
+    </div>
   </div>
 </div>
-
+ 
+<!-- HOW WE DELIVER -->
 <div class="how">
   <div class="how-inner">
     <div class="how-header">
+      <!-- REVISED H2 -->
       <h2 class="changed">How Lumea Delivers Energy Infrastructure Certainty</h2>
+      <!-- NEW: brand line retained as eyebrow/intro -->
       <p class="how-eyebrow new-addition">Clarity to decide. Freedom to shape. Confidence to move.</p>
     </div>
     <div class="how-cards">
       <div class="how-card">
         <h3>Clarity to decide</h3>
+        <!-- NEW: keyword descriptor line -->
         <p class="changed" style="font-size:14px; color:var(--teal); font-weight:600; margin-bottom:4px;">Deep infrastructure expertise across energy connections, BESS and telecommunications.</p>
-        <p style="color:var(--card-text);">Deep infrastructure expertise across energy and telecommunications gives you a clear view of options, constraints and trade-offs, so decisions are informed, not assumed.</p>
+        <p>Deep infrastructure expertise across energy and telecommunications gives you a clear view of options, constraints and trade-offs, so decisions are informed, not assumed.</p>
         <a href="#" class="link-arrow" style="margin-top:auto; font-size:14px;">How we bring clarity</a>
       </div>
       <div class="how-card">
         <h3>Freedom to shape</h3>
+        <!-- NEW: keyword descriptor line -->
         <p class="changed" style="font-size:14px; color:var(--teal); font-weight:600; margin-bottom:4px;">Integrated networks and commercially agile delivery — built around your project, not a fixed model.</p>
-        <p style="color:var(--card-text);">Integrated networks and commercially agile delivery mean solutions are designed around your priorities, not forced into predefined models.</p>
+        <p>Integrated networks and commercially agile delivery mean solutions are designed around your priorities, not forced into predefined models.</p>
         <a href="#" class="link-arrow" style="margin-top:auto; font-size:14px;">How we tailor solutions</a>
       </div>
       <div class="how-card">
         <h3>Confidence to move</h3>
+        <!-- NEW: keyword descriptor line -->
         <p class="changed" style="font-size:14px; color:var(--teal); font-weight:600; margin-bottom:4px;">From design through operation, every connection is managed with precision across the full asset lifecycle.</p>
-        <p style="color:var(--card-text);">From design through operation, every detail is managed with precision, making outcomes reliable and momentum uninterrupted.</p>
+        <p>From design through operation, every detail is managed with precision, making outcomes reliable and momentum uninterrupted.</p>
         <a href="#" class="link-arrow" style="margin-top:auto; font-size:14px;">How we deliver certainty</a>
       </div>
     </div>
   </div>
 </div>
-
-<div class="section" style="background:var(--white);">
-  <div style="max-width:var(--max-width); margin:0 auto;">
+ 
+<!-- PROJECTS CAROUSEL -->
+<div class="section" style="padding: 100px 92px; background: var(--white);">
+  <div style="max-width: var(--max-width); margin: 0 auto;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:48px;">
-      <h2>From vision to operation, without uncertainty</h2>
-      <div style="display:flex; align-items:center; gap:16px;"><span style="font-size:16px; color:var(--body-text);">Browse all</span><span style="font-size:20px; color:var(--grey-dark);">← →</span></div>
+      <h2 style="font-family:'Chakra Petch',sans-serif;">From vision to operation, without uncertainty</h2>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="font-size:16px; color:var(--body-text);">Browse all</span>
+        <span style="font-size:20px; color:var(--grey-dark);">← →</span>
+      </div>
     </div>
     <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-bottom:48px;">
+      <!-- Card 1 -->
       <div style="background:var(--white); border-radius:16px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-        <div style="height:180px; background:linear-gradient(135deg,#8a9ea3,#6b8188); position:relative;"><span style="position:absolute; top:12px; left:12px; background:rgba(255,255,255,0.9); font-size:11px; font-weight:600; padding:3px 10px; border-radius:4px;">Energy</span></div>
-        <div style="padding:24px;"><h4 style="font-family:'Chakra Petch',sans-serif; font-size:18px; margin-bottom:10px;">Coppabella Wind Farm</h4><p style="font-size:14px; color:var(--card-text); margin-bottom:12px;">Lumea is facilitating the grid connection for Coppabella Wind Farm in the Southern Tablelands NSW.</p><p style="font-size:13px; color:var(--body-text);">📍 Southern Tablelands NSW</p><p style="font-size:13px; color:var(--body-text);">↑ Status: Not Started</p></div>
+        <div style="height:180px; background:linear-gradient(135deg,#8a9ea3,#6b8188); display:flex; align-items:center; justify-content:center; position:relative;">
+          <span style="position:absolute; top:12px; left:12px; background:rgba(255,255,255,0.9); font-size:11px; font-weight:600; padding:3px 10px; border-radius:4px; color:var(--slate);">Energy</span>
+        </div>
+        <div style="padding:24px;">
+          <h4 style="font-family:'Chakra Petch',sans-serif; font-size:18px; margin-bottom:10px;">Coppabella Wind Farm</h4>
+          <p style="font-size:14px; color:var(--card-text); margin-bottom:16px;">Lumea is facilitating the grid connection for Coppabella Wind Farm in the Southern Tablelands NSW.</p>
+          <p style="font-size:13px; color:var(--body-text);">📍 Southern Tablelands NSW</p>
+          <p style="font-size:13px; color:var(--body-text);">↑ Status: Not Started</p>
+        </div>
       </div>
+      <!-- Card 2 -->
       <div style="background:var(--white); border-radius:16px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-        <div style="height:180px; background:linear-gradient(135deg,#7a8e93,#5a7178); position:relative;"><span style="position:absolute; top:12px; left:12px; background:rgba(255,255,255,0.9); font-size:11px; font-weight:600; padding:3px 10px; border-radius:4px;">Energy</span></div>
-        <div style="padding:24px;"><h4 style="font-family:'Chakra Petch',sans-serif; font-size:18px; margin-bottom:10px;">Deer Park BESS</h4><p style="font-size:14px; color:var(--card-text); margin-bottom:12px;">A market-facing grid battery connected to existing transmission infrastructure and ideally located close to Melbourne's load centre.</p><p style="font-size:13px; color:var(--body-text);">📍 Melbourne • VIC</p><p style="font-size:13px; color:var(--body-text);">↑ Status: Development</p></div>
+        <div style="height:180px; background:linear-gradient(135deg,#7a8e93,#5a7178);"></div>
+        <div style="padding:24px;">
+          <h4 style="font-family:'Chakra Petch',sans-serif; font-size:18px; margin-bottom:10px;">Deer Park BESS</h4>
+          <p style="font-size:14px; color:var(--card-text); margin-bottom:16px;">A market-facing grid battery connected to existing transmission infrastructure and ideally located close to Melbourne's load centre.</p>
+          <p style="font-size:13px; color:var(--body-text);">📍 Melbourne • VIC</p>
+          <p style="font-size:13px; color:var(--body-text);">↑ Status: Development</p>
+        </div>
       </div>
+      <!-- Card 3 -->
       <div style="background:var(--white); border-radius:16px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-        <div style="height:180px; background:linear-gradient(135deg,#6a7e83,#4a6168); position:relative;"><span style="position:absolute; top:12px; left:12px; background:rgba(255,255,255,0.9); font-size:11px; font-weight:600; padding:3px 10px; border-radius:4px;">Energy</span></div>
-        <div style="padding:24px;"><h4 style="font-family:'Chakra Petch',sans-serif; font-size:18px; margin-bottom:10px;">Deer Park Terminal Station</h4><p style="font-size:14px; color:var(--card-text); margin-bottom:12px;">LUMEA's development of a 220/66kV terminal station at Deer Park was the first competitive win by a non-incumbent in Victoria.</p><p style="font-size:13px; color:var(--body-text);">📍 Melbourne • VIC</p><p style="font-size:13px; color:var(--body-text);">↑ Status: Completed May 2024</p></div>
+        <div style="height:180px; background:linear-gradient(135deg,#6a7e83,#4a6168);"></div>
+        <div style="padding:24px;">
+          <h4 style="font-family:'Chakra Petch',sans-serif; font-size:18px; margin-bottom:10px;">Deer Park Terminal Station</h4>
+          <p style="font-size:14px; color:var(--card-text); margin-bottom:16px;">LUMEA's development of a 220/66kV terminal station at Deer Park was the first competitive win by a non-incumbent in Victoria.</p>
+          <p style="font-size:13px; color:var(--body-text);">📍 Melbourne • VIC</p>
+          <p style="font-size:13px; color:var(--body-text);">↑ Status: Completed May 2024</p>
+        </div>
       </div>
+      <!-- Card 4 -->
       <div style="background:var(--white); border-radius:16px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-        <div style="height:180px; background:linear-gradient(135deg,#9aaeb3,#7a9198); position:relative;"><span style="position:absolute; top:12px; left:12px; background:rgba(255,255,255,0.9); font-size:11px; font-weight:600; padding:3px 10px; border-radius:4px;">Energy</span></div>
-        <div style="padding:24px;"><h4 style="font-family:'Chakra Petch',sans-serif; font-size:18px; margin-bottom:10px;">Limondale BESS</h4><p style="font-size:14px; color:var(--card-text); margin-bottom:12px;">Lumea facilitated the connection assets provided to the Limondale Battery Energy Storage System.</p><p style="font-size:13px; color:var(--body-text);">📍 Balranald Shire, NSW</p><p style="font-size:13px; color:var(--body-text);">↑ Status: Not Started</p></div>
+        <div style="height:180px; background:linear-gradient(135deg,#9aaeB3,#7a9198);"></div>
+        <div style="padding:24px;">
+          <h4 style="font-family:'Chakra Petch',sans-serif; font-size:18px; margin-bottom:10px;">Limondale BESS</h4>
+          <p style="font-size:14px; color:var(--card-text); margin-bottom:16px;">Lumea facilitated the connection assets provided to the Limondale Battery Energy Storage System.</p>
+          <p style="font-size:13px; color:var(--body-text);">📍 Balranald Shire, NSW</p>
+          <p style="font-size:13px; color:var(--body-text);">↑ Status: Not Started</p>
+        </div>
       </div>
     </div>
+    <!-- NEW: See who we work with CTA below carousel -->
     <div style="text-align:center;">
       <a href="#" class="link-arrow new-addition" style="font-size:16px;">See who we work with</a>
     </div>
   </div>
 </div>
-
+ 
+ 
 <div class="network">
   <div class="network-heading">
     <h2 class="changed" style="margin-bottom:8px;">Australia's Integrated Energy and Telecommunications Network</h2>
@@ -266,41 +407,53 @@
       <p>Integrated energy and telecommunications infrastructure reduces risk, increases optionality and supports decisions that need to endure.</p>
       <a href="#" class="btn btn-dark">Explore the network</a>
     </div>
+    <div class="network-dots">· · · · ·<br>· · · · ·<br>· · · · ·</div>
   </div>
 </div>
-
+ 
+<!-- MOMENTUM -->
 <div class="momentum">
   <div class="momentum-inner">
     <div style="text-align:center;">
-      <h2 class="changed" style="color:#F7F7F7;">End-to-End Energy Infrastructure Delivery — From Vision to Operation</h2>
+      <h2 class="changed">End-to-End Energy Infrastructure Delivery — From Vision to Operation</h2>
       <p class="new-addition" style="font-family:'Chakra Petch',sans-serif; font-size:20px; font-weight:400; color:#F7F7F7; margin-top:12px;">Momentum is limitless when certainty is assured.</p>
     </div>
     <div class="momentum-cards">
       <div class="momentum-card">
-        <div class="momentum-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <p style="color:#F7F7F7;">Expertise that anticipates risk</p>
+        <div class="momentum-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <p>Expertise that anticipates risk</p>
       </div>
       <div class="momentum-card">
-        <div class="momentum-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <p style="color:#F7F7F7;">Precision across every phase</p>
+        <div class="momentum-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <p>Precision across every phase</p>
       </div>
       <div class="momentum-card">
-        <div class="momentum-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <p style="color:#F7F7F7;">Partnership that adapts with you</p>
+        <div class="momentum-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <p>Partnership that adapts with you</p>
       </div>
       <div class="momentum-card">
-        <div class="momentum-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="momentum-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <!-- REVISED -->
         <p class="changed" style="color:#F7F7F7;">Operation and maintenance, built to last</p>
       </div>
     </div>
   </div>
 </div>
-
+ 
+<!-- TRANSGRID -->
 <div class="transgrid">
   <div class="transgrid-inner">
-    <div class="transgrid-logo">Lumea <span style="color:var(--teal);">↗</span><br><span style="font-size:13px; font-weight:400; color:var(--grey-dark);">Transgrid Group</span></div>
+    <div class="transgrid-logo">Lumea <span>↗</span><br><span style="font-size:13px; font-weight:400; color:var(--grey-dark);">Transgrid Group</span></div>
     <div class="transgrid-content">
-      <h2 class="changed">Backed by the Transgrid Group</h2>
+      <h2>Confidence backed by scale and stewardship</h2>
       <p>As part of the Transgrid Group, Lumea combines transmission-grade capability with a delivery mindset focused on predictable outcomes — today and over the long term.</p>
       <div class="transgrid-links">
         <a href="#" class="transgrid-link">Leadership &amp; governance</a>
@@ -310,24 +463,26 @@
     </div>
   </div>
 </div>
-
+ 
+<!-- CTA BANNER -->
 <div class="cta-banner">
   <div class="cta-inner">
     <div class="cta-text">
-      <h2 style="color:var(--body-text);">Move forward with confidence</h2>
+      <h2>Move forward with confidence</h2>
       <p>When doubt is removed, progress accelerates. Let's make your next step predictable.</p>
     </div>
     <div class="cta-buttons">
-      <a href="#" class="btn-cta changed">Talk to our team <span>↗</span></a>
-      <a href="#" class="btn-cta changed">Explore our services <span>↗</span></a>
+      <a href="#" class="btn-cta">Start a conversation <span>↗</span></a>
+      <a href="#" class="btn-cta">Explore how confidence is delivered <span>↗</span></a>
     </div>
   </div>
 </div>
-
+ 
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">Lumea <span style="color:var(--teal);">↗</span></div>
-    <div style="display:flex; gap:48px;">
+    <div class="footer-logo">Lumea <span>↗</span></div>
+    <div class="footer-links">
       <div class="footer-col">
         <a href="#">Privacy</a>
         <a href="#">Disclaimer</a>
@@ -342,6 +497,6 @@
   </div>
   <p class="footer-acknowledgement">Lumea acknowledges the long-standing connection to Country shared by the Traditional Custodians of the lands, skies, and waterways we live and work on. We honour this connection with respect for the Elders who came before us, those with us today, and those who will shape the future.</p>
 </footer>
-
+ 
 </body>
 </html>
