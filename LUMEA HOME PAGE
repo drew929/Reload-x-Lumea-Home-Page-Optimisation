@@ -179,7 +179,7 @@
 
 <!-- LEGEND -->
 <div class="legend">
-  <span class="legend-title">Lumea Homepage — Revised Copy</span>
+  <span class="legend-title">Lumea Homepage - Revised Copy</span>
   <div class="legend-item"><div class="legend-dot dot-revised"></div> Revised content</div>
   <div class="legend-item"><div class="legend-dot dot-new"></div> New addition</div>
   <div class="legend-item" style="opacity:0.6;">No outline = unchanged</div>
@@ -217,7 +217,7 @@
     </p>
 
     <p style="font-size:16px; color:var(--body-text); margin-top:4px;">
-      Lumea brings together deep infrastructure expertise, integrated energy and telecommunications networks, and a delivery approach built around your priorities — so you can decide clearly and move with certainty.
+      Lumea brings together deep infrastructure expertise, integrated energy and telecommunications networks, and a delivery approach built around your priorities - so you can decide clearly and move with certainty.
     </p>
     <div class="hero-btns">
       <a href="#" class="btn btn-dark">Explore our services</a>
@@ -232,7 +232,7 @@
     <div class="priorities-top">
       <!-- REVISED H2 -->
       <h2 class="changed">Lumea's Energy and Telecommunications Infrastructure Services</h2>
-      <p>Every project carries technical, regulatory and commercial pressure. Our role is to absorb that complexity — so you can focus on what's next, not what might go wrong.</p>
+      <p>Every project carries technical, regulatory and commercial pressure. Our role is to absorb that complexity - so you can focus on what's next, not what might go wrong.</p>
     </div>
 
     <div class="priorities-grid">
@@ -322,7 +322,7 @@
       <div class="how-card">
         <h3>Freedom to shape</h3>
         <!-- NEW: keyword descriptor line -->
-        <p class="changed" style="font-size:14px; color:var(--teal); font-weight:600; margin-bottom:4px;">Integrated networks and commercially agile delivery — built around your project, not a fixed model.</p>
+        <p class="changed" style="font-size:14px; color:var(--teal); font-weight:600; margin-bottom:4px;">Integrated networks and commercially agile delivery - built around your project, not a fixed model.</p>
         <p>Integrated networks and commercially agile delivery mean solutions are designed around your priorities, not forced into predefined models.</p>
         <a href="#" class="link-arrow" style="margin-top:auto; font-size:14px;">How we tailor solutions</a>
       </div>
@@ -417,7 +417,7 @@
 <div class="momentum">
   <div class="momentum-inner">
     <div style="text-align:center;">
-      <h2 class="changed">End-to-End Energy Infrastructure Delivery — From Vision to Operation</h2>
+      <h2 class="changed">End-to-End Energy Infrastructure Delivery - From Vision to Operation</h2>
       <p class="new-addition" style="font-family:'Chakra Petch',sans-serif; font-size:20px; font-weight:400; color:#F7F7F7; margin-top:12px;">Momentum is limitless when certainty is assured.</p>
     </div>
     <div class="momentum-cards">
@@ -456,7 +456,7 @@
     <div class="transgrid-logo">Lumea <span>↗</span><br><span style="font-size:13px; font-weight:400; color:var(--grey-dark);">Transgrid Group</span></div>
     <div class="transgrid-content">
       <h2>Confidence backed by scale and stewardship</h2>
-      <p>As part of the Transgrid Group, Lumea combines transmission-grade capability with a delivery mindset focused on predictable outcomes — today and over the long term.</p>
+      <p>As part of the Transgrid Group, Lumea combines transmission-grade capability with a delivery mindset focused on predictable outcomes - today and over the long term.</p>
       <div class="transgrid-links">
         <a href="#" class="transgrid-link">Leadership &amp; governance</a>
         <a href="#" class="transgrid-link">Sustainability</a>
