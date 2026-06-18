@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Lumea | Australia's Energy Infrastructure Company</title>
+<meta name="description" content="Lumea delivers end-to-end energy connections, asset management and telecommunications infrastructure across Australia. Part of the Transgrid Group, built to last.">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --teal: #1DAC94;
+    --slate: #222F32;
+    --white: #FFFFFF;
+    --grey-light: #F7F7F7;
+    --grey-mid: #E7E7E7;
+    --grey-dark: #626262;
+    --charcoal: #4B4B4B;
+    --body-text: #4C4A4B;
+    --card-text: #626262;
+    --max-width: 1256px;
+  }
+  body { font-family: 'Poppins', Arial, sans-serif; color: var(--slate); background: var(--white); font-size: 16px; line-height: 1.6; }
+  h1 { font-family: 'Chakra Petch', sans-serif; font-size: 48px; font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--slate); }
+  h2 { font-family: 'Chakra Petch', sans-serif; font-size: 40px; font-weight: 600; line-height: 1.4; letter-spacing: -0.02em; color: #2B2B2B; }
+  h3 { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 500; line-height: 1.5; color: var(--charcoal); }
+  p { color: var(--body-text); font-size: 16px; line-height: 1.6; }
+  a { text-decoration: none; color: inherit; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; font-family: 'Poppins', sans-serif; }
+  .btn-dark { background: var(--charcoal); color: var(--white); }
+  .link-arrow { font-size: 16px; font-weight: 600; color: var(--teal); display: inline-flex; align-items: center; gap: 6px; }
+  .link-arrow::after { content: '→'; }
+  .changed { outline: 2px dashed var(--teal); outline-offset: 4px; position: relative; }
+  .changed::before { content: '✦ REVISED'; position: absolute; top: -22px; left: 0; background: var(--teal); color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 3px; z-index: 10; white-space: nowrap; }
+  .new-addition { outline: 2px dashed #f59e0b; outline-offset: 4px; position: relative; }
+  .new-addition::before { content: '+ NEW'; position: absolute; top: -22px; left: 0; background: #f59e0b; color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 3px; z-index: 10; white-space: nowrap; }
+  .legend { background: var(--slate); color: var(--white); padding: 16px 92px; display: flex; gap: 32px; align-items: center; font-size: 13px; font-family: 'Poppins', sans-serif; position: sticky; top: 0; z-index: 100; }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-dot { width: 14px; height: 14px; border-radius: 2px; }
+  .dot-revised { background: var(--teal); }
+  .dot-new { background: #f59e0b; }
+  .legend-title { font-weight: 600; font-size: 14px; margin-right: 16px; }
+  .topbar { background: var(--white); padding: 10px 92px; border-bottom: 1px solid var(--grey-mid); display: flex; justify-content: flex-end; align-items: center; font-size: 12px; color: var(--body-text); gap: 16px; }
+  nav { padding: 0 92px; height: 104px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--grey-mid); }
+  .nav-logo { font-family: 'Chakra Petch', sans-serif; font-size: 24px; font-weight: 600; color: var(--slate); letter-spacing: -0.02em; }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a { font-size: 16px; font-weight: 600; color: var(--slate); }
+
+  /* HERO */
+  .hero { position: relative; min-height: 427px; background: linear-gradient(135deg, #d0d8da 0%, #b8c4c7 100%); display: flex; align-items: center; padding: 100px 92px; overflow: hidden; }
+  .hero::after { content: ''; position: absolute; right: 80px; top: 50%; transform: translateY(-50%); width: 300px; height: 380px; background: linear-gradient(180deg, #8a9ea3 0%, #6b8188 100%); border-radius: 4px; opacity: 0.4; }
+  .hero-card { background: var(--white); border-radius: 60px 0 100px; padding: 56px 40px 76px; max-width: 590px; position: relative; z-index: 2; display: flex; flex-direction: column; gap: 16px; }
+  .breadcrumb { padding: 8px 92px; font-size: 12px; font-weight: 500; color: var(--grey-dark); letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid var(--grey-mid); display: flex; gap: 8px; align-items: center; }
+  .breadcrumb a { color: var(--grey-dark); }
+  .breadcrumb span { color: var(--charcoal); font-weight: 700; }
+
+  /* INTRO */
+  .intro { padding: 100px 92px; position: relative; overflow: hidden; }
+  .intro-inner { max-width: 890px; padding: 16px 20px; }
+  .intro-inner p { font-size: 16px; color: #2B2B2B; line-height: 1.6; margin-top: 16px; }
+
+  /* STRENGTH */
+  .strength { padding: 100px 92px; }
+  .strength-inner { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .strength-image { background: linear-gradient(135deg, #8a9ea3, #5a7178); border-radius: 16px; min-height: 617px; }
+  .strength-content { display: flex; flex-direction: column; gap: 32px; }
+  .strength-content p { color: var(--card-text); font-size: 16px; line-height: 1.6; }
+  .bullet-list { display: flex; flex-direction: column; gap: 12px; }
+  .bullet-item { display: flex; align-items: flex-start; gap: 16px; font-size: 16px; color: var(--charcoal); line-height: 1.6; }
+  .bullet-dot { width: 16px; height: 16px; background: var(--grey-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px; }
+  .bullet-dot::after { content: ''; width: 3px; height: 6px; border: 1.5px solid white; transform: rotate(-135deg); display: block; }
+
+  /* TRANSGRID DIAGRAM */
+  .transgrid-section { background: var(--grey-dark); padding: 100px 102px; display: flex; flex-direction: column; align-items: center; gap: 60px; }
+  .transgrid-section h2 { color: var(--white); text-align: center; }
+  .transgrid-diagram { background: linear-gradient(135deg, #4a5e63, #3a4e53); border-radius: 16px; width: 100%; max-width: 1138px; height: 497px; display: flex; align-items: center; justify-content: center; }
+  .transgrid-diagram p { color: rgba(255,255,255,0.4); font-size: 14px; }
+
+  /* COMMUNITIES */
+  .communities { padding: 100px 92px; background: var(--white); }
+  .communities-inner { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .communities-image { background: linear-gradient(135deg, #7a9ea3, #5a7e83); border-radius: 16px; min-height: 397px; }
+  .communities-content { display: flex; flex-direction: column; gap: 24px; }
+  .communities-content p { color: var(--charcoal); font-size: 16px; line-height: 1.6; }
+
+  /* WHAT WE DELIVER */
+  .services { padding: 100px 92px; background: var(--white); }
+  .services-inner { max-width: var(--max-width); margin: 0 auto; }
+  .services-header { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-bottom: 60px; align-items: start; }
+  .services-header p { font-size: 16px; color: var(--body-text); line-height: 1.6; }
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .service-card { background: var(--grey-light); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; gap: 16px; }
+  .service-card p { color: var(--card-text); font-size: 15px; }
+
+  /* LEADERSHIP */
+  .leadership { padding: 100px 92px; background: var(--white); }
+  .leadership-inner { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 290px 1fr; gap: 32px; align-items: start; }
+  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .team-card { display: flex; flex-direction: column; gap: 0; }
+  .team-photo { height: 210px; background: linear-gradient(135deg, #8a9ea3, #6b8188); border-radius: 4px; margin-bottom: 16px; }
+  .team-info { border-left: 1px solid #000; padding: 8px 16px; }
+  .team-name { font-size: 20px; font-weight: 500; color: var(--charcoal); margin-bottom: 8px; }
+  .team-title { font-size: 14px; color: #A3A3A3; line-height: 1.8; }
+  .team-li { margin-top: 12px; display: inline-block; width: 29px; height: 24px; background: var(--teal); border-radius: 4px; }
+  .leadership-intro { display: flex; flex-direction: column; gap: 16px; }
+  .leadership-intro p { font-size: 16px; color: var(--body-text); line-height: 1.6; }
+
+  /* FOOTER */
+  footer { background: var(--charcoal); padding: 50px 92px; }
+  .footer-inner { max-width: 1250px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
+  .footer-logo { font-family: 'Chakra Petch', sans-serif; font-size: 20px; font-weight: 600; color: var(--white); }
+  .footer-col { display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { font-size: 16px; font-weight: 500; color: var(--white); }
+  .footer-acknowledgement { max-width: 1250px; margin: 0 auto; font-size: 14px; color: #A7ACAD; line-height: 1.3; }
+
+  @media (max-width: 900px) {
+    .strength-inner, .communities-inner, .services-header, .leadership-inner { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 32px; }
+    h2 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LEGEND -->
+<div class="legend">
+  <span class="legend-title">Lumea About Us — Revised Copy</span>
+  <div class="legend-item"><div class="legend-dot dot-revised"></div> Revised</div>
+  <div class="legend-item"><div class="legend-dot dot-new"></div> New addition</div>
+  <div class="legend-item" style="opacity:0.6;">No outline = unchanged</div>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  Follow us to keep up to date with our latest posts.
+  <a href="https://linkedin.com/company/lumeaau" style="color:var(--teal); font-weight:600;">LinkedIn ↗</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Lumea <span style="color:var(--teal);">↗</span></div>
+  <div class="nav-links">
+    <a href="#">About us</a>
+    <a href="/what-we-do/">What we do</a>
+    <a href="#">Projects</a>
+    <a href="#">News</a>
+    <a href="#">Contact us</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-card">
+    <!-- REVISED: "About us" → "About Lumea" -->
+    <h1 class="changed">About Lumea</h1>
+    <p style="font-size:16px; color:var(--body-text);">Creating momentum for a cleaner tomorrow.</p>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="/">Home</a> › <span>About us</span>
+</div>
+
+<!-- WHO WE ARE -->
+<div class="intro">
+  <div class="intro-inner">
+    <h2>Who we are</h2>
+    <!-- REVISED: 13GW updated to 15GW, otherwise original copy preserved -->
+    <p>LUMEA™ is creating competitive and innovative pathways to Australia's energy future. By asking our teams to bring together a new mix of technologies and essential infrastructure services, we are delivering smarter solutions that benefit all Australians.</p>
+    <p>Lumea has a portfolio of over <span class="changed">18GW</span> of renewable energy generation being brought into the National Electricity Market (NEM) with more than 55 generators connected or under construction. We're also one of the leading telecommunications providers to renewable projects in Australia, with a focus on regional areas, data transmission and emergency broadcast services.</p>
+    <!-- NEW: internal link to What We Do -->
+    <a href="/what-we-do/" class="link-arrow new-addition" style="margin-top:32px; display:inline-flex;">See what we do</a>
+  </div>
+</div>
+
+<!-- STRENGTH THROUGH TRANSGRID -->
+<div class="strength">
+  <div class="strength-inner">
+    <div class="strength-image"></div>
+    <div class="strength-content">
+      <!-- H2 unchanged -->
+      <h2>Strength through Transgrid Group</h2>
+      <!-- Original copy preserved exactly -->
+      <p>As Australia charts a path to a clean energy future, the Transgrid Group is providing the essential infrastructure and services to make it possible. Lumea's access to Transgrid's world-class delivery &amp; operations teams ensure efficiency and excellence through economies of scale in supply chain and resourcing of spares.</p>
+      <p>Together, we are the strength Australia's energy transition needs.</p>
+      <div class="bullet-list">
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Industry experts across planning and approvals</span></div>
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Deep connections to AEMO and other market bodies</span></div>
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Dedicated technical and asset management, delivery and O&amp;M teams</span></div>
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Long term connection asset design assurance</span></div>
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Management of interface, administration and 3rd party risk</span></div>
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Increased choice of providers</span></div>
+        <div class="bullet-item"><div class="bullet-dot"></div><span>Unparalleled response time and technical expertise ensure asset availability</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRANSGRID DIAGRAM -->
+<div class="transgrid-section">
+  <!-- H2 unchanged -->
+  <h2>Transgrid Group and our role in the energy market</h2>
+  <div class="transgrid-diagram">
+    <p>[Network diagram — Customers / Lumea / Transgrid / Distribution]</p>
+  </div>
+</div>
+
+<!-- CONNECTING COMMUNITIES -->
+<div class="communities">
+  <div class="communities-inner">
+    <div class="communities-image"></div>
+    <div class="communities-content">
+      <!-- H2 unchanged -->
+      <h2>Connecting Communities</h2>
+      <!-- Original copy preserved exactly -->
+      <p>Creating as much clean, renewable energy as we can, is one of the most important jobs Australia has for the coming decades. To help with this task, we want to be better than average. We want to set benchmarks. We want to exceed expectations.</p>
+      <p>Find out more about our commitment to building a brighter future for everyone, no matter who or where they are. Or, if you'd like to speak to our community engagement team please email <a href="mailto:communities@lumea.com.au" style="color:var(--teal);">communities@lumea.com.au</a></p>
+      <!-- NEW: internal link to community page -->
+      <a href="/about-us/community/" class="link-arrow new-addition">Find out more</a>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE DELIVER — NEW SECTION -->
+<div class="services">
+  <div class="services-inner">
+    <div class="services-header">
+      <h2 class="new-addition">What We Deliver</h2>
+      <p>Lumea operates across four service areas, each built to remove complexity from your project and give you the certainty to move forward. <a href="/what-we-do/" style="color:var(--teal); font-weight:600;">Explore our services →</a></p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Energy Connections</h3>
+        <p>End-to-end grid connection for solar farms, wind farms, battery storage and major industrial sites — designed, built, owned and operated for the life of the asset.</p>
+        <a href="/what-we-do/energy-connections/" class="link-arrow" style="font-size:14px; margin-top:auto;">Learn more</a>
+      </div>
+      <div class="service-card">
+        <h3>Asset Management</h3>
+        <p>Specialist long-term operation of energy infrastructure — including assets Lumea wasn't involved in building. Maintained to transmission-grade standards.</p>
+        <a href="/what-we-do/asset-management/" class="link-arrow" style="font-size:14px; margin-top:auto;">Learn more</a>
+      </div>
+      <div class="service-card">
+        <h3>Data Services</h3>
+        <p>Carrier-grade fibre connectivity for wholesale, government and enterprise customers. Purpose-built for critical infrastructure in regional and remote Australia.</p>
+        <a href="/what-we-do/data-services/" class="link-arrow" style="font-size:14px; margin-top:auto;">Learn more</a>
+      </div>
+      <div class="service-card">
+        <h3>Colocation</h3>
+        <p>Access to 37,000+ high-voltage towers for telecommunications deployment. Digital-first applications with structural assessments and approvals in days.</p>
+        <a href="/what-we-do/colocation/" class="link-arrow" style="font-size:14px; margin-top:auto;">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SENIOR LEADERSHIP -->
+<div class="leadership">
+  <div class="leadership-inner">
+    <div class="leadership-intro">
+      <!-- H2 unchanged -->
+      <h2>Senior Leadership Team</h2>
+      <!-- NEW: two lines of contextualising copy -->
+      <p class="new-addition">Lumea is led by a team with deep experience across energy infrastructure, telecommunications and major project delivery. Their backgrounds span transmission networks, renewable energy development, commercial finance and community engagement — giving Lumea the range to manage complex, long-term projects from first connection to ongoing operation.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo"></div>
+        <div class="team-info">
+          <div class="team-name">[Name]</div>
+          <div class="team-title">[Title]</div>
+          <div class="team-li"></div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"></div>
+        <div class="team-info">
+          <div class="team-name">[Name]</div>
+          <div class="team-title">[Title]</div>
+          <div class="team-li"></div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"></div>
+        <div class="team-info">
+          <div class="team-name">[Name]</div>
+          <div class="team-title">[Title]</div>
+          <div class="team-li"></div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"></div>
+        <div class="team-info">
+          <div class="team-name">[Name]</div>
+          <div class="team-title">[Title]</div>
+          <div class="team-li"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Lumea <span style="color:var(--teal);">↗</span></div>
+    <div style="display:flex; gap:48px;">
+      <div class="footer-col">
+        <a href="#">Privacy</a>
+        <a href="#">Disclaimer</a>
+        <a href="#">News</a>
+        <a href="#">Careers ↗</a>
+        <a href="#">Contact us</a>
+      </div>
+      <div class="footer-col">
+        <a href="#" style="color:var(--teal);">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-acknowledgement">Lumea acknowledges the long-standing connection to Country shared by the Traditional Custodians of the lands, skies, and waterways we live and work on. We honour this connection with respect for the Elders who came before us, those with us today, and those who will shape the future.</p>
+</footer>
+
+</body>
+</html>
