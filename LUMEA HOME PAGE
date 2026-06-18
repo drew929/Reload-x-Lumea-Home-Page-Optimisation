@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
   :root {
     --teal: #1DAC94;
     --slate: #222F32;
@@ -21,7 +21,7 @@
     --card-text: #626262;
     --max-width: 1256px;
   }
- 
+
   body {
     font-family: 'Poppins', Arial, sans-serif;
     color: var(--slate);
@@ -29,7 +29,7 @@
     font-size: 16px;
     line-height: 1.6;
   }
- 
+
   /* ── UTILITY ── */
   .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
   .section { padding: 100px 92px; width: 100%; }
@@ -39,31 +39,31 @@
   .changed { outline: 2px dashed var(--teal); outline-offset: 4px; position: relative; }
   .changed::before { content: '✦ REVISED'; position: absolute; top: -22px; left: 0; background: var(--teal); color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 3px; z-index: 10; white-space: nowrap; }
   .new::before { content: '+ NEW'; }
- 
+
   h1 { font-family: 'Chakra Petch', sans-serif; font-size: 48px; font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--slate); }
   h2 { font-family: 'Chakra Petch', sans-serif; font-size: 40px; font-weight: 600; line-height: 1.4; letter-spacing: -0.02em; color: #2B2B2B; }
   h3 { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 500; line-height: 1.5; letter-spacing: -0.02em; color: var(--charcoal); }
   h4 { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 500; line-height: 1.5; color: #4B4B4B; }
   p { color: var(--body-text); font-size: 16px; line-height: 1.6; }
   a { text-decoration: none; color: inherit; }
- 
+
   .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; font-family: 'Poppins', sans-serif; cursor: pointer; transition: opacity 0.2s; }
   .btn:hover { opacity: 0.85; }
   .btn-dark { background: var(--charcoal); color: var(--white); }
   .btn-outline { border: 1px solid var(--charcoal); color: var(--slate); }
   .link-arrow { font-size: 16px; font-weight: 600; color: var(--slate); display: inline-flex; align-items: center; gap: 6px; }
   .link-arrow::after { content: '→'; }
- 
+
   /* ── TOPBAR ── */
   .topbar { background: var(--white); padding: 10px 92px; border-bottom: 1px solid var(--grey-mid); display: flex; justify-content: flex-end; align-items: center; font-size: 12px; color: var(--body-text); gap: 16px; }
- 
+
   /* ── NAV ── */
   nav { padding: 0 92px; height: 104px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--grey-mid); }
   .nav-logo { font-family: 'Chakra Petch', sans-serif; font-size: 24px; font-weight: 600; color: var(--slate); letter-spacing: -0.02em; }
   .nav-logo span { color: var(--teal); }
   .nav-links { display: flex; gap: 32px; }
   .nav-links a { font-size: 16px; font-weight: 600; color: var(--slate); }
- 
+
   /* ── HERO ── */
   .hero { position: relative; min-height: 533px; background: linear-gradient(135deg, #d0d8da 0%, #b8c4c7 100%); display: flex; align-items: center; padding: 100px 92px; overflow: hidden; }
   .hero::after { content: ''; position: absolute; right: 80px; top: 50%; transform: translateY(-50%); width: 320px; height: 420px; background: linear-gradient(180deg, #8a9ea3 0%, #6b8188 100%); border-radius: 4px; opacity: 0.4; }
@@ -71,7 +71,7 @@
   .hero-card .label { margin-bottom: 4px; }
   .hero-subhead { font-size: 16px; font-weight: 400; color: var(--body-text); line-height: 1.6; margin-top: 4px; }
   .hero-btns { display: flex; gap: 16px; margin-top: 8px; flex-wrap: wrap; }
- 
+
   /* ── PRIORITIES ── */
   .priorities { padding: 100px 92px; }
   .priorities-inner { max-width: var(--max-width); margin: 0 auto; }
@@ -84,7 +84,7 @@
   .priority-icon svg { width: 32px; height: 32px; color: var(--teal); }
   .priority-card h4 { font-size: 18px; }
   .priorities-ctas { display: flex; gap: 24px; align-items: center; padding: 0 20px; }
- 
+
   /* ── STATS ── */
   .stats { background: var(--grey-dark); padding: 100px 102px; display: flex; justify-content: center; }
   .stats-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: var(--max-width); width: 100%; }
@@ -92,7 +92,7 @@
   .stat:last-child { border-right: none; }
   .stat-number { font-family: 'Chakra Petch', sans-serif; font-size: 40px; font-weight: 600; color: var(--white); letter-spacing: -0.02em; display: block; margin-bottom: 16px; }
   .stat-label { font-size: 16px; color: var(--white); line-height: 1.6; }
- 
+
   /* ── HOW WE DELIVER ── */
   .how { padding: 100px 92px; }
   .how-inner { max-width: var(--max-width); margin: 0 auto; }
@@ -102,7 +102,7 @@
   .how-card { background: var(--white); border: 1px solid var(--grey-mid); border-radius: 16px; padding: 40px; display: flex; flex-direction: column; gap: 16px; }
   .how-card h3 { font-size: 28px; }
   .how-card p { color: var(--card-text); font-size: 16px; flex: 1; }
- 
+
   /* ── NETWORK ── */
   .network { padding: 100px 0 0; }
   .network-heading { padding: 0 92px; margin-bottom: 0; }
@@ -110,7 +110,7 @@
   .network-card { background: var(--white); border-radius: 60px 0 141px; padding: 40px; max-width: 539px; display: flex; flex-direction: column; gap: 24px; margin-top: 40px; }
   .network-card p { font-size: 16px; color: var(--body-text); }
   .network-dots { position: absolute; right: 100px; top: 60px; opacity: 0.3; font-size: 80px; color: var(--teal); letter-spacing: -10px; }
- 
+
   /* ── MOMENTUM ── */
   .momentum { background: var(--charcoal); padding: 100px 92px; }
   .momentum-inner { max-width: var(--max-width); margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 60px; }
@@ -120,7 +120,7 @@
   .momentum-card-icon { width: 58px; height: 58px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
   .momentum-card-icon svg { width: 28px; height: 28px; color: var(--teal); }
   .momentum-card p { color: #F7F7F7; font-size: 16px; line-height: 1.6; }
- 
+
   /* ── TRANSGRID ── */
   .transgrid { padding: 100px 92px; }
   .transgrid-inner { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: auto 1fr; gap: 64px; align-items: center; }
@@ -130,7 +130,7 @@
   .transgrid-links { display: flex; gap: 24px; flex-wrap: wrap; }
   .transgrid-link { font-size: 16px; font-weight: 600; color: var(--charcoal); display: inline-flex; align-items: center; gap: 6px; }
   .transgrid-link::after { content: '→'; }
- 
+
   /* ── CTA BANNER ── */
   .cta-banner { background: var(--grey-mid); padding: 120px 92px; }
   .cta-inner { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; }
@@ -138,7 +138,7 @@
   .cta-text p { color: var(--body-text); margin-top: 16px; }
   .cta-buttons { display: flex; flex-direction: column; gap: 16px; }
   .btn-cta { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; background: var(--charcoal); color: var(--white); border-radius: 4px; font-size: 16px; font-weight: 600; min-width: 338px; font-family: 'Poppins', sans-serif; }
- 
+
   /* ── FOOTER ── */
   footer { background: var(--charcoal); padding: 50px 92px; }
   .footer-inner { max-width: 1250px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
@@ -148,12 +148,12 @@
   .footer-col { display: flex; flex-direction: column; gap: 10px; }
   .footer-col a { font-size: 16px; font-weight: 500; color: var(--white); }
   .footer-acknowledgement { max-width: 1250px; margin: 0 auto; font-size: 14px; color: #A7ACAD; line-height: 1.3; }
- 
+
   /* ── CHANGED LABEL COLOURS ── */
   .changed { outline-color: var(--teal); }
   .new-addition { outline: 2px dashed #f59e0b; outline-offset: 4px; position: relative; }
   .new-addition::before { content: '+ NEW'; position: absolute; top: -22px; left: 0; background: #f59e0b; color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 3px; z-index: 10; white-space: nowrap; }
- 
+
   /* ── LEGEND ── */
   .legend { background: var(--slate); color: var(--white); padding: 16px 92px; display: flex; gap: 32px; align-items: center; font-size: 13px; font-family: 'Poppins', sans-serif; position: sticky; top: 0; z-index: 100; }
   .legend-item { display: flex; align-items: center; gap: 8px; }
@@ -161,7 +161,7 @@
   .dot-revised { background: var(--teal); }
   .dot-new { background: #f59e0b; }
   .legend-title { font-weight: 600; font-size: 14px; margin-right: 16px; }
- 
+
   @media (max-width: 900px) {
     .section, .priorities, .how, .transgrid, .cta-banner, .momentum { padding: 60px 24px; }
     nav, .topbar, .hero, .stats, .network-heading, .network-map, footer, .legend { padding-left: 24px; padding-right: 24px; }
@@ -176,7 +176,7 @@
 </style>
 </head>
 <body>
- 
+
 <!-- LEGEND -->
 <div class="legend">
   <span class="legend-title">Lumea Homepage — Revised Copy</span>
@@ -184,13 +184,13 @@
   <div class="legend-item"><div class="legend-dot dot-new"></div> New addition</div>
   <div class="legend-item" style="opacity:0.6;">No outline = unchanged</div>
 </div>
- 
+
 <!-- TOPBAR -->
 <div class="topbar">
   Follow us to keep up to date with our latest posts.
   <a href="https://linkedin.com/company/lumeaau" style="color:var(--teal); font-weight:600;">LinkedIn ↗</a>
 </div>
- 
+
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Lumea<span>↗</span> <span style="font-size:12px; font-weight:400; color:var(--grey-dark); font-family:'Poppins',sans-serif;">Transgrid Group</span></div>
@@ -202,18 +202,20 @@
     <a href="#">Contact us</a>
   </div>
 </nav>
- 
+
 <!-- HERO -->
 <div class="hero">
   <div class="hero-card">
     <span class="label">Confidence delivered</span>
-    <h1>The future rewards those who can act with confidence</h1>
- 
-    <!-- NEW: keyword subheadline -->
-    <p class="hero-subhead new-addition" style="margin-top:8px;">
+    <!-- REVISED: H1 is brand term, H2 is brand line styled smaller -->
+    <h1 class="changed" style="font-size:48px; letter-spacing:-0.02em;">Lumea</h1>
+    <h2 class="changed" style="font-size:28px; font-weight:400; line-height:1.3; color:var(--slate);">The future rewards those who can act with confidence</h2>
+
+    <!-- keyword subheadline as paragraph, not a heading tag -->
+    <p class="new-addition" style="font-size:16px; color:var(--body-text); margin-top:4px;">
       Australia's leading provider of end-to-end energy connections, asset management and telecommunications infrastructure. Part of the Transgrid Group.
     </p>
- 
+
     <p style="font-size:16px; color:var(--body-text); margin-top:4px;">
       Lumea brings together deep infrastructure expertise, integrated energy and telecommunications networks, and a delivery approach built around your priorities — so you can decide clearly and move with certainty.
     </p>
@@ -223,7 +225,7 @@
     </div>
   </div>
 </div>
- 
+
 <!-- BUILT AROUND YOUR PRIORITIES -->
 <div class="priorities">
   <div class="priorities-inner">
@@ -232,7 +234,7 @@
       <h2 class="changed">Lumea's Energy and Telecommunications Infrastructure Services</h2>
       <p>Every project carries technical, regulatory and commercial pressure. Our role is to absorb that complexity — so you can focus on what's next, not what might go wrong.</p>
     </div>
- 
+
     <div class="priorities-grid">
       <div class="priority-card">
         <div class="priority-icon">
@@ -271,13 +273,13 @@
         <h4>Government and public sector</h4>
       </div>
     </div>
- 
+
     <div class="priorities-ctas">
       <a href="/what-we-do/" class="link-arrow new-addition" style="color:var(--teal);">Explore what we do</a>
     </div>
   </div>
 </div>
- 
+
 <!-- STATS BAR -->
 <div class="stats">
   <div class="stats-inner">
@@ -299,7 +301,7 @@
     </div>
   </div>
 </div>
- 
+
 <!-- HOW WE DELIVER -->
 <div class="how">
   <div class="how-inner">
@@ -334,7 +336,7 @@
     </div>
   </div>
 </div>
- 
+
 <!-- PROJECTS CAROUSEL -->
 <div class="section" style="padding: 100px 92px; background: var(--white);">
   <div style="max-width: var(--max-width); margin: 0 auto;">
@@ -395,8 +397,8 @@
     </div>
   </div>
 </div>
- 
- 
+
+
 <div class="network">
   <div class="network-heading">
     <h2 class="changed" style="margin-bottom:8px;">Australia's Integrated Energy and Telecommunications Network</h2>
@@ -410,7 +412,7 @@
     <div class="network-dots">· · · · ·<br>· · · · ·<br>· · · · ·</div>
   </div>
 </div>
- 
+
 <!-- MOMENTUM -->
 <div class="momentum">
   <div class="momentum-inner">
@@ -447,7 +449,7 @@
     </div>
   </div>
 </div>
- 
+
 <!-- TRANSGRID -->
 <div class="transgrid">
   <div class="transgrid-inner">
@@ -463,7 +465,7 @@
     </div>
   </div>
 </div>
- 
+
 <!-- CTA BANNER -->
 <div class="cta-banner">
   <div class="cta-inner">
@@ -477,7 +479,7 @@
     </div>
   </div>
 </div>
- 
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -497,6 +499,6 @@
   </div>
   <p class="footer-acknowledgement">Lumea acknowledges the long-standing connection to Country shared by the Traditional Custodians of the lands, skies, and waterways we live and work on. We honour this connection with respect for the Elders who came before us, those with us today, and those who will shape the future.</p>
 </footer>
- 
+
 </body>
 </html>
