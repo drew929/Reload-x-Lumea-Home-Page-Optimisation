@@ -225,11 +225,11 @@
 </div>
 
 <!-- WHAT WE DELIVER — NEW SECTION -->
-<div class="services">
+<div class="services new-addition" style="outline-offset: 0px;">
   <div class="services-inner">
     <div class="services-header">
-      <h2 class="new-addition">What We Deliver</h2>
-      <p>Lumea operates across four service areas, each built to remove complexity from your project and give you the certainty to move forward. <a href="/what-we-do/" style="color:var(--teal); font-weight:600;">Explore our services →</a></p>
+      <h2>What We Deliver</h2>
+      <p>Lumea brings together deep expertise across energy infrastructure, telecommunications and long-term asset operation — removing complexity so your project can move forward with certainty. <a href="/what-we-do/" style="color:var(--teal); font-weight:600;">Explore our services →</a></p>
     </div>
     <div class="services-grid">
       <div class="service-card">
@@ -263,7 +263,7 @@
       <!-- H2 unchanged -->
       <h2>Senior Leadership Team</h2>
       <!-- NEW: two lines of contextualising copy -->
-      <p class="new-addition">Lumea is led by a team with deep experience across energy infrastructure, telecommunications and major project delivery. Their backgrounds span transmission networks, renewable energy development, commercial finance and community engagement — giving Lumea the range to manage complex, long-term projects from first connection to ongoing operation.</p>
+      <p class="new-addition">Lumea's leadership team brings decades of experience across energy infrastructure, heavy industry and major capital programs. They've worked across transmission networks, renewable energy development and large-scale project delivery in Australia and internationally — giving Lumea the technical depth and commercial judgement to manage complex, long-term infrastructure from first connection through to ongoing operation.</p>
     </div>
     <div class="team-grid">
       <div class="team-card">
